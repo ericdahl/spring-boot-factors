@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Configuration
 @ComponentScan
 class app {
      public static void main(String[] args) {
-         SpringApplication.run(app.class, args);
+         SpringApplication springApp = new SpringApplication(app.class)
+         springApp.showBanner = false
+         springApp.run(args)
      }
 }
