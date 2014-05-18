@@ -5,12 +5,17 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.0.2.RELEASE")
+        classpath 'net.saliman:gradle-cobertura-plugin:2.0.0'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:0.2.1'
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'spring-boot'
 apply plugin: 'groovy'
+apply plugin: 'cobertura'
+apply plugin: 'coveralls'
+cobertura.coverageFormats = ['html', 'xml']
 
 jar {
     baseName = 'spring-boot-mersenne-primes'
