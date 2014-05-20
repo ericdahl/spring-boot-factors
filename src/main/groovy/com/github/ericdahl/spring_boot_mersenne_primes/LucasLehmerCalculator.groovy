@@ -1,12 +1,14 @@
 package com.github.ericdahl.spring_boot_mersenne_primes
 
 import groovy.util.logging.Slf4j
+import org.springframework.cache.annotation.Cacheable
 import org.springframework.stereotype.Service
 
 @Slf4j
 @Service
-class LucasLehmerCalculator {
+class LucasLehmerCalculator implements MersennePrimeCalculator {
 
+    @Cacheable("mersennePrimes")
     PrimeResult checkPrimality(int n) {
 
         log.info('Processing request for [{}]', n);
