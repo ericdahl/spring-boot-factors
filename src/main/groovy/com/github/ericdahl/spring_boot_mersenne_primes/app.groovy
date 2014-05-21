@@ -25,9 +25,4 @@ class app {
     public CacheManager cacheManager() {
         new SimpleCacheManager(caches: [new ConcurrentMapCache("mersennePrimes")])
     }
-
-    @Bean
-    public LucasLehmerCalculator() {
-        return new LucasLehmerCalculator()
-    }
 }
