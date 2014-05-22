@@ -9,12 +9,16 @@ import org.springframework.cache.support.SimpleCacheManager
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
+import org.springframework.web.filter.ShallowEtagHeaderFilter
+
+import javax.servlet.Filter
 
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
 @EnableCaching
 class app {
+
      public static void main(String[] args) {
          SpringApplication springApp = new SpringApplication(app.class)
          springApp.showBanner = false
@@ -24,5 +28,10 @@ class app {
     @Bean
     public CacheManager cacheManager() {
         new SimpleCacheManager(caches: [new ConcurrentMapCache("mersennePrimes")])
+    }
+
+    @Bean
+    public Filter etagFilter() {
+        new ShallowEtagHeaderFilter()
     }
 }
