@@ -12,5 +12,10 @@ Sample web service app using spring-boot, groovy and spock
 ```$ java -jar build/libs/*jar```
 ##### Use
 ```$ curl http://localhost:8080/47```
+#### Management
+The app uses Spring Boot's Actuator feature to expose [many useful metrics/stats](http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#production-ready-endpoints) for monitoring. They
+are available under /manage.
 
+For example:
 
+![ScreenShot](https://raw.githubusercontent.com/ericdahl/spring-boot-mersenne-primes/gh-pages/actuator.png)
