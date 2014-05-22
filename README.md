@@ -18,4 +18,4 @@ are available under /manage.
 
 For example:
 
-![ScreenShot](https://raw.githubusercontent.com/ericdahl/spring-boot-mersenne-primes/gh-pages/actuator.png)
+[![ScreenShot](https://raw.githubusercontent.com/ericdahl/spring-boot-mersenne-primes/gh-pages/actuator-thumb.png)](https://raw.githubusercontent.com/ericdahl/spring-boot-mersenne-primes/gh-pages/actuator.png)
