@@ -1,10 +1,11 @@
 package com.github.ericdahl.spring_boot_mersenne_primes
 
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.SpringApplication
+import org.springframework.boot.actuate.metrics.CounterService
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.cache.CacheManager
 import org.springframework.cache.annotation.EnableCaching
-import org.springframework.cache.concurrent.ConcurrentMapCache
 import org.springframework.cache.support.SimpleCacheManager
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
@@ -19,15 +20,18 @@ import javax.servlet.Filter
 @EnableCaching
 class app {
 
-     public static void main(String[] args) {
-         SpringApplication springApp = new SpringApplication(app.class)
-         springApp.showBanner = false
-         springApp.run(args)
-     }
+    @Autowired
+    CounterService counterService
+
+    public static void main(String[] args) {
+        SpringApplication springApp = new SpringApplication(app.class)
+        springApp.showBanner = false
+        springApp.run(args)
+    }
 
     @Bean
     public CacheManager cacheManager() {
-        new SimpleCacheManager(caches: [new ConcurrentMapCache("mersennePrimes")])
+        new SimpleCacheManager(caches: [new CountingMapCache("mersennePrimes", counterService)])
     }
 
     @Bean
