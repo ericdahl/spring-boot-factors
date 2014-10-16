@@ -42,3 +42,8 @@ configurations {
 task wrapper(type: Wrapper) {
     gradleVersion = '1.11'
 }
+
+task stage {
+}
+
+stage.dependsOn build
