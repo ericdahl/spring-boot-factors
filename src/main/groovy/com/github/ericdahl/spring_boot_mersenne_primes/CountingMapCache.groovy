@@ -45,6 +45,15 @@ class CountingMapCache implements Cache {
     }
 
     @Override
+    Cache.ValueWrapper putIfAbsent(Object key, Object value) {
+        if (null == concurrentMapCache.get(key)) {
+            increment("puts")
+            put(key, value)
+        }
+        return null
+    }
+
+    @Override
     void evict(Object key) {
         concurrentMapCache.evict(key)
     }
