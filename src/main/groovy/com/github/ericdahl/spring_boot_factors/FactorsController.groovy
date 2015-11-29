@@ -1,4 +1,4 @@
-package com.github.ericdahl.spring_boot_mersenne_primes
+package com.github.ericdahl.spring_boot_factors
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.PathVariable
@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class MersennePrimeController {
+class FactorsController {
 
-    MersennePrimeCalculator calculator
+    FactorService service
 
     @Autowired
-    MersennePrimeController(MersennePrimeCalculator calculator) {
-        this.calculator = calculator
+    FactorsController(FactorService service) {
+        this.service = service
     }
 
     @RequestMapping("/{n}")
-    public @ResponseBody PrimeResult checkPrimality(@PathVariable int n) {
-        return calculator.checkPrimality(n)
+    public @ResponseBody List<Integer> factorize(@PathVariable int n) {
+        return service.factorize(n)
     }
 }

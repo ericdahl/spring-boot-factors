@@ -1,4 +1,4 @@
-package com.github.ericdahl.spring_boot_mersenne_primes
+package com.github.ericdahl.spring_boot_factors
 
 import org.springframework.boot.actuate.metrics.CounterService
 import org.springframework.cache.Cache

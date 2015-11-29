@@ -1,4 +1,4 @@
 .gradle/
 build/
-.idea/
-spring-boot-mersenne-primes.iml
+\.idea/
+*\.iml

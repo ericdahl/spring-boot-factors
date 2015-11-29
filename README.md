@@ -1,7 +1,7 @@
-spring-boot-mersenne-primes
+spring-boot-factors
 ===========================
 
-[![Build Status](https://travis-ci.org/ericdahl/spring-boot-mersenne-primes.png?branch=master)](https://travis-ci.org/ericdahl/spring-boot-mersenne-primes) [![Coverage Status](https://coveralls.io/repos/ericdahl/spring-boot-mersenne-primes/badge.png)](https://coveralls.io/r/ericdahl/spring-boot-mersenne-primes)
+[![Build Status](https://travis-ci.org/ericdahl/spring-boot-factors.png?branch=master)](https://travis-ci.org/ericdahl/spring-boot-factors) [![Coverage Status](https://coveralls.io/repos/ericdahl/spring-boot-factors/badge.png)](https://coveralls.io/r/ericdahl/spring-boot-factors)
 
 Sample web service app using spring-boot, groovy and spock
 
@@ -18,4 +18,4 @@ are available under /manage.
 
 For example:
 
-[![ScreenShot](https://raw.githubusercontent.com/ericdahl/spring-boot-mersenne-primes/gh-pages/actuator-thumb.png)](https://raw.githubusercontent.com/ericdahl/spring-boot-mersenne-primes/gh-pages/actuator.png)
+[![ScreenShot](https://raw.githubusercontent.com/ericdahl/spring-boot-factors/gh-pages/actuator-thumb.png)](https://raw.githubusercontent.com/ericdahl/spring-boot-factors/gh-pages/actuator.png)

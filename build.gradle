@@ -19,7 +19,7 @@ cobertura.coverageFormats = ['html', 'xml']
 cobertura.coverageSourceDirs = sourceSets.main.groovy.srcDirs
 
 jar {
-    baseName = 'spring-boot-mersenne-primes'
+    baseName = 'spring-boot-factors'
     version =  '0.0.1'
 }
 

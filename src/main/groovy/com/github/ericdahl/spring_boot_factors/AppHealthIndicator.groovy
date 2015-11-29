@@ -1,4 +1,4 @@
-package com.github.ericdahl.spring_boot_mersenne_primes
+package com.github.ericdahl.spring_boot_factors
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.actuate.health.Health
@@ -10,18 +10,16 @@ import org.springframework.stereotype.Component
 class AppHealthIndicator implements HealthIndicator {
 
     @Autowired
-    MersennePrimeCalculator calculator
+    FactorService calculator
 
     @Autowired
     CacheManager cacheManager
 
     @Override
     Health health() {
-
         return new Health.Builder()
                 .up()
-                .withDetail('calculator', calculator.checkPrimality(7).prime)
-                .withDetail('cacheManager', null != cacheManager.getCache("mersennePrimes").get(7, PrimeResult.class))
+                .withDetail('service', calculator.factorize(7) == [7])
                 .build()
     }
 }

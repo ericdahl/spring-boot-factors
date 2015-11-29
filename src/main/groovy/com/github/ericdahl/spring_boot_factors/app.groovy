@@ -1,4 +1,4 @@
-package com.github.ericdahl.spring_boot_mersenne_primes
+package com.github.ericdahl.spring_boot_factors
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.SpringApplication
@@ -31,7 +31,7 @@ class app {
 
     @Bean
     public CacheManager cacheManager() {
-        new SimpleCacheManager(caches: [new CountingMapCache("mersennePrimes", counterService)])
+        new SimpleCacheManager(caches: [new CountingMapCache("factors", counterService)])
     }
 
     @Bean
