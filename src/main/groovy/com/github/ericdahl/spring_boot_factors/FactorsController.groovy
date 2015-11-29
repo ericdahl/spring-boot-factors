@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class FactorsController {
 
-    FactorService service
+    private final FactorService service
 
     @Autowired
     FactorsController(FactorService service) {
@@ -17,7 +17,7 @@ class FactorsController {
     }
 
     @RequestMapping("/{n}")
-    public @ResponseBody List<Integer> factorize(@PathVariable int n) {
+    public List<Integer> factorize(@PathVariable int n) {
         return service.factorize(n)
     }
 }

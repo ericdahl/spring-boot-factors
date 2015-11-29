@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.actuate.metrics.CounterService
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
+import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.cache.CacheManager
 import org.springframework.cache.annotation.EnableCaching
 import org.springframework.cache.support.SimpleCacheManager
@@ -14,23 +15,16 @@ import org.springframework.web.filter.ShallowEtagHeaderFilter
 
 import javax.servlet.Filter
 
-@Configuration
-@EnableAutoConfiguration
-@ComponentScan
+@SpringBootApplication
 @EnableCaching
 class app {
 
-    @Autowired
-    CounterService counterService
-
     public static void main(String[] args) {
-        SpringApplication springApp = new SpringApplication(app.class)
-        springApp.showBanner = false
-        springApp.run(args)
+        SpringApplication.run(app.class, args);
     }
 
     @Bean
-    public CacheManager cacheManager() {
+    public CacheManager cacheManager(CounterService counterService) {
         new SimpleCacheManager(caches: [new CountingMapCache("factors", counterService)])
     }
 

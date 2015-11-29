@@ -9,11 +9,14 @@ import org.springframework.stereotype.Component
 @Component
 class AppHealthIndicator implements HealthIndicator {
 
-    @Autowired
-    FactorService calculator
+    private final FactorService calculator
+    private final CacheManager cacheManager
 
     @Autowired
-    CacheManager cacheManager
+    AppHealthIndicator(FactorService calculator, CacheManager cacheManager) {
+        this.calculator = calculator
+        this.cacheManager = cacheManager
+    }
 
     @Override
     Health health() {
