@@ -8,3 +8,8 @@ env:
 
 after_success:
   - gradle cobertura coveralls
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "pMNPmeCiGCZ72qMFSky6mXv1by2kld3Rz4aVbW3MdyagecMgWTc4eqA9XmwtrLnFRVoAXmxHI2uOSMNs2PmOSOvgKdwbUPHKxhtp+013mDowYJcjuBT/sOXscqDgEV7v8N19M/pp6A2U+jX2w6KyUpfXWXrCl7zTs3C2p7qnXQA="
