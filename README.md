@@ -7,7 +7,7 @@ Sample web service app using spring-boot, groovy and spock
 
 #### Quick Start
 ##### Build
-```$ gradle build```
+```$ ./gradlew build```
 ##### Run
 ```$ java -jar build/libs/*jar```
 ##### Use
